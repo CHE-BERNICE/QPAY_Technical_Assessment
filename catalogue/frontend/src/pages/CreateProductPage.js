@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from 'react-icons/fa';
 import axios from 'axios';
 
 const CreateProductPage = () => {
+    const navigate = useNavigate();
+
     const [productName, setProductName] = useState('');
     const [amount, setAmount] = useState('');
     const [currency, setCurrency] = useState('');
@@ -13,22 +15,18 @@ const CreateProductPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(productName === "" || amount === "" || currency === "" || file === null) {
+        if(productName === "" || amount === "" || currency === "" || !file ) {
             setInputErr("Please fill all fields!");
         } else {
             setInputErr();
             const formData = new FormData();
-            formData.append('imageUrl', file)
-            let productData = {
-                productName: productName,
-                amount: Number(amount),
-                currency: currency
-            }
-            axios.post("http://localhost:5000/postProducts", productData, {
-                headers: { 'Content-Type': 'multipart/form-data' },
-                data: formData
-            })
-            .then(res => console.log(res))
+            formData.append('productName', productName);
+            formData.append('amount', Number(amount));
+            formData.append('currency', currency);
+            formData.append('imageUrl', file);
+            
+            axios.post("http://localhost:5000/postProducts", formData)
+            .then(res => {console.log(res); navigate('/')})
             .catch((err) => console.log(err))
         }
     }
@@ -50,6 +48,7 @@ const CreateProductPage = () => {
                         <input 
                             type="text" 
                             name="productName"
+                            required
                             value={ productName }
                             onChange={(e) => {setProductName(e.target.value)}}
                             className="outline-none border border-sm p-2 mt-1 w-full" 
@@ -61,6 +60,7 @@ const CreateProductPage = () => {
                         <input 
                             type="text" 
                             name="amount"
+                            required
                             value={ amount }
                             onChange={(e) => {setAmount(e.target.value)}}
                             className="outline-none border border-sm p-2 mt-1 w-full" 
@@ -71,6 +71,7 @@ const CreateProductPage = () => {
                         <input 
                             type="text"
                             name="currency"
+                            required
                             value={ currency }
                             onChange={(e) => {setCurrency(e.target.value)}} 
                             className="outline-none border border-sm p-2 mt-1 w-full" 

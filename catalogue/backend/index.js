@@ -8,6 +8,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -25,16 +26,16 @@ const upload = multer({
 })
 
 app.post("/postProducts",  upload.single('imageUrl'), async (req, res) => {
-    console.log(req.file);
-    /* const { productName, amount, currency } = req.body;
-    const imageUrl = req.file.path; // Get the path of the uploaded file
+    //console.log(req.file, req.body);
+    const { productName, amount, currency } = req.body;
+    const imageUrl = `http://localhost:5000/images/${req.file.filename}`; // Get the path of the uploaded file
 
     try {
         const product = await createProduct(productName, imageUrl, amount, currency);
         res.json({ message: "Form Submitted" });
     } catch (error) {
         res.status(500).json({ error: "Internal Server Error" });
-    } */
+    } 
 });
 
 app.get("/", (req,res) => {
