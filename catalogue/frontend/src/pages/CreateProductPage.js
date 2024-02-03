@@ -25,7 +25,7 @@ const CreateProductPage = () => {
             formData.append('currency', currency);
             formData.append('imageUrl', file);
             
-            axios.post("http://localhost:5000/postProducts", formData)
+            axios.post("https://catalogue-backend.vercel.app/postProducts", formData)
             .then(res => navigate('/'))
             .catch((err) => console.log(err))
         }

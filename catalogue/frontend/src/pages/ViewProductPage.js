@@ -10,14 +10,14 @@ const ViewProductPage = () => {
     const [data, setData] = useState([]);
     const [msg, setMsg] = useState();
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://catalogue-backend.vercel.app/product/${id}`)
         .then(res => res.json())
         .then(data => setData(data))
         .catch(err => console.log(err))
     }, [id]);
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/delProduct/${id}`, {
+        fetch(`https://catalogue-backend.vercel.app/delProduct/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

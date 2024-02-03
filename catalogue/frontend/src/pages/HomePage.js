@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
     const [products, setProducts] = useState([]);
     const [pages, setPages] = useState(0);
-    //const [data, setData] = useState([]);
     const [pageNo, setPageNo] = useState(1);
     let [num, setNum] = useState(1);
     const pg = [
@@ -14,7 +13,7 @@ const HomePage = () => {
         {pge: num+2}
     ];
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${pageNo}`)
+        fetch(`https://catalogue-backend.vercel.app/products/${pageNo}`)
         .then(res => res.json())
         .then(data => {
             setProducts(data.rows);
