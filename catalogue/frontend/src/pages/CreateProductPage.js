@@ -26,7 +26,7 @@ const CreateProductPage = () => {
             formData.append('imageUrl', file);
             
             axios.post("http://localhost:5000/postProducts", formData)
-            .then(res => {console.log(res); navigate('/')})
+            .then(res => navigate('/'))
             .catch((err) => console.log(err))
         }
     }
@@ -42,7 +42,7 @@ const CreateProductPage = () => {
                     <h1 className="text-center font-semibold text-3xl text-slate-700 ml-3"> Create Product</h1>
                 </div>
                 <form encType="multipart/form-data" onSubmit={handleSubmit} className="border border-sm flex flex-col items-center border-slate-300 w-3/4 md:w-1/2 my-5 pt-2">
-                    <div className="my-3 w-3/4">
+                    <div className="my-3 w-11/12 xs:w-3/4">
                         <p className="text-red-600">{inputErr != null && inputErr}</p>
                         <label>Product Name</label><br />
                         <input 
@@ -55,7 +55,7 @@ const CreateProductPage = () => {
                             placeholder="Input Product Name"
                         />
                     </div>
-                    <div className="my-3 w-3/4">
+                    <div className="my-3 w-11/12 xs:w-3/4">
                         <label>Amount</label><br />
                         <input 
                             type="text" 
@@ -66,7 +66,7 @@ const CreateProductPage = () => {
                             className="outline-none border border-sm p-2 mt-1 w-full" 
                             placeholder="Input Amount"/>
                     </div>
-                    <div className="my-3 w-3/4">
+                    <div className="my-3 w-11/12 xs:w-3/4">
                         <label>Currency</label><br />
                         <input 
                             type="text"
@@ -77,7 +77,7 @@ const CreateProductPage = () => {
                             className="outline-none border border-sm p-2 mt-1 w-full" 
                             placeholder="Input Currency"/>
                     </div>
-                    <div className="my-3 w-3/4">
+                    <div className="my-3 w-11/12 xs:w-3/4">
                         <label>Product Image</label><br />
                         <input 
                             type="file" 

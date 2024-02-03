@@ -12,9 +12,15 @@ const pool = mysql.createPool({
 
 
  //GET ALL PRODUCTS 
-export async function getProducts() {
-    const [rows] = await pool.query("SELECT * FROM product");
-    return rows;
+export async function getProducts(pageNo) {
+    const rowsPerPage = 24;
+    const totalResult = await pool.query("SELECT COUNT(*) as total FROM product");
+    const total = totalResult[0][0].total;
+    const pages = Math.ceil(total/rowsPerPage);
+    const page = pageNo-1;
+    const start = page*rowsPerPage;
+    const [rows] = await pool.query(`SELECT * FROM product LIMIT ?, ?`, [ start, rowsPerPage ]);
+    return {rows, pages};
 }
 
 //GET A PRODUCT

@@ -78,17 +78,17 @@ export default function App() {
               <h3 className='text-white justify-self-center'>Contact Us</h3>
             </div>
             <form onSubmit={handleSubmit} className="grid justify-self-center w-full" >
-              <div className='justify-self-center shadow-xl bg-white w-3/5 rounded-lg mb-6 pb-6'>
-                  <ul className='h-16 lg:h-14 list-none grid grid-cols-3 justify-around content-stretch bg-slate-200  rounded-tr-lg'>
-                      <li className='rounded-r-full text-white bg-gradient-to-l from-blue-400 to-cyan-100 pt-3.5 px-3 lg:px-8 xl:px-14'><Link to=""><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>1</span>Your Profile</Link></li>
-                      <li className='rounded-r-full text-slate-400 pt-3.5 px-2 xl:px-6'><Link to=""><span className='rounded-full text-white bg-slate-400 mx-2 py-1 px-2'>2</span>Business Information</Link></li>
-                      <li className='rounded-r-full text-slate-400 pt-3.5 px-2 lg:px-4'><Link to=""><span className='rounded-full text-white bg-slate-400 mx-2 py-1 px-2'>3</span>Additional Users</Link></li>
+              <div className='justify-self-center shadow-xl bg-white w-4/5 sm:w-3/5 rounded-lg mb-6 pb-6'>
+                  <ul className='h-16 lg:h-14 list-none grid sm:grid-cols-3 sm:justify-around content-stretch bg-slate-200  rounded-tr-lg'>
+                      <li className='grid place-content-center w-full sm:w-auto sm:rounded-r-full text-white bg-gradient-to-l from-blue-400 to-cyan-100 pt-3.5 px-3 lg:px-8 xl:px-14'><Link to=""><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>1</span>Your Profile</Link></li>
+                      <li className='hidden sm:inline-grid rounded-r-full text-slate-400 pt-3.5 px-2 xl:px-6'><Link to=""><span className='rounded-full text-white bg-slate-400 mx-2 py-1 px-2'>2</span>Business Information</Link></li>
+                      <li className='hidden sm:inline-grid rounded-r-full text-slate-400 pt-3.5 px-2 lg:px-4'><Link to=""><span className='rounded-full text-white bg-slate-400 mx-2 py-1 px-2'>3</span>Additional Users</Link></li>
                   </ul>
-                  <section className=' grid mt-6 px-10 pb-2'>
+                  <section className=' grid mt-6 px-3 sm:px-10 pb-2'>
                       <span className='my-4 text-slate-300 text-center'>Step 1</span>
                       <h1 className='text-3xl text-slate-800 text-center'>Your Profile</h1>
                       <p className='text-center justify-self-center text-slate-500 w-3/5 leadimg-none'>Enter the login information for your Account. You will be able to create additional users after registering</p>
-                      <div className='my-4 py-4 px-4 lg:px-24 lg:grid grid-cols-2 justify-between justify-items-start'>
+                      <div className='my-4 py-4 px-2 sm:px-4 lg:px-24 lg:grid grid-cols-2 justify-between justify-items-start'>
                           <p className="text-md text-red-500">{error != null && error}</p>
                           <p></p>
                           <div className='grid justify-items-start'>
@@ -169,18 +169,18 @@ export default function App() {
               <h3 className='text-white justify-self-center'>Contact Us</h3>
             </div>
             <form onSubmit={handleSubmit} className="grid justify-self-center w-full" >
-              <div className='justify-self-center shadow-xl bg-white w-3/5 rounded-lg mb-6 pb-6'>
-                  <ul className='h-16 lg:h-14 list-none grid grid-cols-3 justify-around content-stretch bg-slate-200  rounded-tr-lg'>
-                      <li className=' text-white bg-gradient-to-l from-cyan-400 to-cyan-100 pt-3.5 px-3 lg:px-8 xl:px-14'><Link ><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>1</span>Your Profile</Link></li>
-                      <li className='rounded-r-full text-white bg-gradient-to-l from-blue-400 to-cyan-400 pt-3.5 px-2 xl:px-6'><Link to=""><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>2</span>Business Information</Link></li>
-                      <li className='rounded-r-full text-slate-400 pt-3.5 px-2 lg:px-4'><Link to=""><span className='rounded-full text-white bg-slate-400 mx-2 py-1 px-2'>3</span>Additional Users</Link></li>
+              <div className='justify-self-center shadow-xl bg-white w-4/5 sm:w-3/5 rounded-lg mb-6 pb-6'>
+                  <ul className='h-16 lg:h-14 list-none grid sm:grid-cols-3 sm:justify-around content-stretch bg-slate-200  rounded-tr-lg'>
+                      <li className='hidden sm:inline-grid text-white bg-gradient-to-l from-cyan-400 to-cyan-100 pt-3.5 px-3 lg:px-8 xl:px-14'><Link ><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>1</span>Your Profile</Link></li>
+                      <li className='grid place-content-center w-full sm:w-auto sm:rounded-r-full text-white bg-gradient-to-l from-blue-400 to-cyan-400 pt-3.5 px-2 xl:px-6'><Link to=""><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>2</span>Business Information</Link></li>
+                      <li className='hidden place-content-center rounded-r-full text-slate-400 pt-3.5 px-2 lg:px-4'><Link to=""><span className='rounded-full text-white bg-slate-400 mx-2 py-1 px-2'>3</span>Additional Users</Link></li>
                   </ul>
-                  <section className=' grid mt-6 px-10 pb-2'>
+                  <section className=' grid mt-6 px-3 sm:px-10 pb-2'>
                       <span className='my-4 text-slate-300 text-center'>Step 2</span>
                       <h1 className='text-3xl text-slate-800 text-center'>Business Information</h1>
                       <p className='text-center justify-self-center text-slate-500 w-3/5 leadimg-none'>Please enter information about your company</p>
                       
-                      <div className=' my-4 pb-4 px-4 lg:px-24 '>
+                      <div className=' my-4 pb-4 px-2 sm:px-4 lg:px-24 '>
                           <h2 className="text-blue-400 text-md my-2 ">GENERAL INFORMATION</h2>
                           <div className="lg:grid grid-cols-2 justify-between justify-items-start">
                             <p className="text-md text-red-500">{error != null && error}</p>
@@ -253,11 +253,11 @@ export default function App() {
                       </div>
                   </section>
               </div>
-              <div className='grid grid-cols-2 justify-items-center px-8 py-3 mt-2 mb-16'>
-                <Link className='text-blue-500 text-md font-serif border border-blue-200 py-2 px-4'> Back to Login </Link>
+              <div className='grid sm:grid-cols-2 justify-items-center px-8 py-3 mt-2 mb-16'>
+                <Link className='hidden sm:inline-grid text-blue-500 text-md font-serif border border-blue-200 py-2 px-4'> Back to Login </Link>
                 <div>
-                    <Link onClick={prevPage} className='text-blue-500 text-md font-serif border border-blue-500 mr-2 py-2 px-4'> Previous Step </Link>
-                    <button type="submit" className='text-white text-md font-serif bg-blue-500 justify-self-center py-2 px-4'>Next Step</button>
+                    <Link onClick={prevPage} className='text-blue-500 text-md font-serif border border-blue-500 mr-2 py-2 px-2 xs:px-4'> Previous Step </Link>
+                    <button type="submit" className='text-white text-md font-serif bg-blue-500 justify-self-center py-2 px-2 xs:px-4'>Next Step</button>
                 </div>
               </div>
             </form>
@@ -270,13 +270,13 @@ export default function App() {
               <h3 className='text-white justify-self-center'>Contact Us</h3>
             </div>
             <form onSubmit={handleSubmit} className="grid justify-self-center w-full" >
-              <div className='justify-self-center shadow-xl bg-white w-3/5 rounded-lg mb-6 pb-6'>
-                  <ul className='h-16 lg:h-14 list-none grid grid-cols-3 justify-around content-stretch rounded-tr-full'>
-                      <li className=' text-white bg-gradient-to-l from-cyan-200 to-cyan-100 pt-3.5 px-3 lg:px-8 xl:px-14'><Link to=""><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>1</span>Your Profile</Link></li>
-                      <li className=' text-white bg-gradient-to-l from-cyan-400 to-cyan-200 pt-3.5 px-2 xl:px-6'><Link to=""><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>2</span>Business Information</Link></li>
-                      <li className='rounded-r-full text-white bg-gradient-to-l from-blue-400 to-cyan-400 pt-3.5 px-2 lg:px-4'><Link to=""><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>3</span>Additional Users</Link></li>
+              <div className='justify-self-center shadow-xl bg-white w-4/5b sm:w-3/5 rounded-lg mb-6 pb-6'>
+                  <ul className='h-16 lg:h-14 list-none grid sm:grid-cols-3 sm:justify-around content-stretch rounded-tr-full'>
+                      <li className='hidden sm:inline-grid text-white bg-gradient-to-l from-cyan-200 to-cyan-100 pt-3.5 px-3 lg:px-8 xl:px-14'><Link to=""><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>1</span>Your Profile</Link></li>
+                      <li className='hidden sm:inline-grid text-white bg-gradient-to-l from-cyan-400 to-cyan-200 pt-3.5 px-2 xl:px-6'><Link to=""><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>2</span>Business Information</Link></li>
+                      <li className='grid place-content-center w-full sm:w-auto sm:rounded-r-full text-white bg-gradient-to-l from-blue-400 to-cyan-400 pt-3.5 px-2 lg:px-4'><Link to=""><span className='rounded-full text-blue-500 bg-white mx-2 py-1 px-2'>3</span>Additional Users</Link></li>
                   </ul>
-                  <section className=' grid mt-6 px-10 pb-2'>
+                  <section className=' grid mt-6 px-3 sm:px-10 pb-2'>
                       <span className='my-4 text-slate-300 text-center'>Step 3</span>
                       <h1 className='text-3xl text-slate-800 text-center'>Additional Users</h1>
                       <p className='text-center justify-self-center text-slate-500 w-3/5 leadimg-none'>Please enter additional users in your company</p>
@@ -286,7 +286,7 @@ export default function App() {
                           <GrStatusGood size={50} className="justify-self-center text-green-500 mb-3"/>
                           <h1 className="text-3xl  justify-self-center mb-1">Congratulations</h1>
                         </div>}
-                        <div className='my-4 py-4 px-4 lg:px-24 lg:grid grid-cols-2 justify-between justify-items-start'>
+                        <div className='my-4 py-4 px-2 sm:px-4 lg:px-24 lg:grid grid-cols-2 justify-between justify-items-start'>
                           <p className="text-md text-red-500">{error != null && error}</p>
                           <p></p>
                             <div className='grid justify-items-start'>
@@ -333,11 +333,11 @@ export default function App() {
                     </div>
                   </section>
               </div>
-              <div className='grid grid-cols-2 justify-items-center px-8 py-3 mt-2 mb-16'>
-                <button className='text-blue-500 text-md font-serif border border-blue-200 py-2 px-4'> Back to Login </button>
+              <div className='grid sm:grid-cols-2 justify-items-center px-8 py-3 mt-2 mb-16'>
+                <button className='hidden sm:inline-grid text-blue-500 text-md font-serif border border-blue-200 py-2 px-4'> Back to Login </button>
                 <div>
-                    <Link onClick={prevPage}  className='text-blue-500 text-md font-serif border border-blue-500 mr-2 py-2 px-4'> Previous Step </Link>
-                    <button type="submit" className='text-white text-md font-serif bg-blue-500 justify-self-center py-2 px-4'>Submit</button>
+                    <Link onClick={prevPage}  className='text-blue-500 text-md font-serif border border-blue-500 mr-2 p-2 xs:px-4'> Previous Step </Link>
+                    <button type="submit" className='text-white text-md font-serif bg-blue-500 justify-self-center p-2 xs:px-4'>Submit</button>
                 </div>
               </div>
             </form>

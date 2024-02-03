@@ -42,9 +42,10 @@ app.get("/", (req,res) => {
     return res.json("Backend");
 });
   
-app.get("/products", async (req,res) => {
-    const products = await getProducts();
-    res.json(products);
+app.get("/products/:pageNo", async (req,res) => {
+    const pageNo = req.params.pageNo;
+    const {rows, pages }= await getProducts(pageNo);
+    res.json({rows, pages});
 });
 
 app.get("/product/:id", async (req,res) => {
