@@ -9,7 +9,7 @@ const app = express();
 app.use(cors(
     {
         origin: ["https://catalogue-frontend-sandy.vercel.app"],
-        methods: ["POST", "GET", "DELETE"],
+        methods: ["GET", "POST", "DELETE"],
         credentials: true
     }
 ));
@@ -34,7 +34,7 @@ const upload = multer({
 app.post("/postProducts",  upload.single('imageUrl'), async (req, res) => {
     //console.log(req.file, req.body);
     const { productName, amount, currency } = req.body;
-    const imageUrl = `http://localhost:5000/images/${req.file.filename}`; // Get the path of the uploaded file
+    const imageUrl = `https://catalogue-backend.vercel.app/images/${req.file.filename}`; // Get the path of the uploaded file
 
     try {
         const product = await createProduct(productName, imageUrl, amount, currency);
@@ -73,4 +73,8 @@ app.use((err, req, res, next ) => {
     res.status(500).send('Something is wrong');
 });
 
-app.listen(5000);
+const port = process.env.PORT || 5000; // Use the provided environment variable or fallback to port 5000
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});

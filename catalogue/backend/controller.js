@@ -48,12 +48,3 @@ export async function deleteProduct(id) {
     return (`Product of ID ${id} has been deleted`);
 }
 
-/*const result = await createProduct( 'Nano', 'https://picsum.photos/id/23/200/300', 700, 'Naira' );
-console.log(result);
-
-const result = await deleteProduct(57);
-console.log(result);
-
-const products = await getProducts();
-console.log(products);
-*/
