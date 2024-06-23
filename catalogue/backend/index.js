@@ -8,7 +8,7 @@ const app = express();
 
 app.use(cors(
     {
-        origin: ["https://catalogue-frontend-sandy.vercel.app"],
+        origin: "https://catalogue-frontend-sandy.vercel.app",
         methods: ["GET", "POST", "DELETE"],
         credentials: true,
         allowedHeaders: ["Content-Type", "Authorization", "X-Custom-Header"]
