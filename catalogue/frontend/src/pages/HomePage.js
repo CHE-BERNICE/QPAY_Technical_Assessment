@@ -19,7 +19,7 @@ const HomePage = () => {
             setProducts(data.rows);
             setPages(data.pages);
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err.message))
     }, [pageNo]);
     
 
