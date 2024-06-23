@@ -10,7 +10,7 @@ app.use(cors(
     {
         origin: ["https://catalogue-frontend-sandy.vercel.app"],
         methods: ["GET", "POST", "DELETE"],
-        credentials: true
+        //credentials: true
     }
 ));
 app.use(express.json());
