@@ -5,10 +5,10 @@ import multer from "multer";
 //import path from "path";
 
 const app = express();
-//https://catalogue-frontend-sandy.vercel.app
+
 app.use(cors(
     {
-        origin: "*" ,
+        origin: "https://catalogue-frontend-sandy.vercel.app" ,
         methods: ["GET", "POST", "DELETE"],
         credentials: true,
         allowedHeaders: ["Content-Type", "Authorization", "X-Custom-Header"]
