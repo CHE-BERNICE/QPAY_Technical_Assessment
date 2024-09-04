@@ -3,8 +3,11 @@ import { getProducts, getProduct, createProduct, deleteProduct } from "./control
 import cors from "cors";
 import multer from "multer";
 //import path from "path";
+import dotenv from 'dotenv';
+
 
 const app = express();
+dotenv.config();
 
 app.use(cors(
     {
